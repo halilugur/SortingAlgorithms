@@ -7,7 +7,7 @@ import com.ugurhalil.sorters.ISorter;
  * @since 20.10.2019
  */
 public class Bubble implements ISorter {
-    private int counter = 0;
+    private long counter = 0;
 
     @Override
     public String description() {
@@ -15,7 +15,7 @@ public class Bubble implements ISorter {
     }
 
     @Override
-    public int loopCounter() {
+    public long loopCounter() {
         return counter;
     }
 

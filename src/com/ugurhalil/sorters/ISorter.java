@@ -7,7 +7,7 @@ package com.ugurhalil.sorters;
 public interface ISorter {
     String description();
 
-    int loopCounter();
+    long loopCounter();
 
     void execute(int[] array);
 }

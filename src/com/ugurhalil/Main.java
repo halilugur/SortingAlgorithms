@@ -30,6 +30,9 @@ public class Main {
         numbers = load(1000);
         execute(numbers);
 
+        numbers = load(3000);
+        execute(numbers);
+
         numbers = load(5000);
         execute(numbers);
 
@@ -47,14 +50,20 @@ public class Main {
 
     private static List<int[]> load(int MaxValue) {
         int[] randomNumbers = Utility.GenerateRandomNumbers(MaxValue);
+        int[] randomNumbers1 = randomNumbers.clone();
+        int[] randomNumbers2 = randomNumbers.clone();
+        int[] randomNumbers3 = randomNumbers.clone();
+        int[] randomNumbers4 = randomNumbers.clone();
+        int[] randomNumbers5 = randomNumbers.clone();
+        int[] randomNumbers6 = randomNumbers.clone();
         numbers = new ArrayList<>();
         numbers.add(randomNumbers);
-        numbers.add(randomNumbers.clone());
-        numbers.add(randomNumbers.clone());
-        numbers.add(randomNumbers.clone());
-        numbers.add(randomNumbers.clone());
-        numbers.add(randomNumbers.clone());
-        numbers.add(randomNumbers.clone());
+        numbers.add(randomNumbers1);
+        numbers.add(randomNumbers2);
+        numbers.add(randomNumbers3);
+        numbers.add(randomNumbers4);
+        numbers.add(randomNumbers5);
+        numbers.add(randomNumbers6);
         return numbers;
     }
 
@@ -66,6 +75,7 @@ public class Main {
         neco.execute(quick, numbers.get(4));
         neco.execute(selection, numbers.get(5));
         neco.execute(shell, numbers.get(6));
+        System.out.println("");
     }
 
 }

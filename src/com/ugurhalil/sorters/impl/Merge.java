@@ -8,7 +8,7 @@ import com.ugurhalil.sorters.ISorter;
  */
 public class Merge implements ISorter {
     private int[] Array2;
-    private int counter = 0;
+    private long counter = 0;
 
     @Override
     public String description() {
@@ -16,7 +16,7 @@ public class Merge implements ISorter {
     }
 
     @Override
-    public int loopCounter() {
+    public long loopCounter() {
         return counter;
     }
 
