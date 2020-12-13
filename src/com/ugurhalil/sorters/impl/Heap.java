@@ -10,7 +10,7 @@ public class Heap implements ISorter {
 
     @Override
     public String description() {
-        return "Heap Sıralama Algoritması";
+        return "Heap Sort";
     }
 
     @Override

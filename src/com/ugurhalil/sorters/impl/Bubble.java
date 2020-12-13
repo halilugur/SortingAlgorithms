@@ -10,7 +10,7 @@ public class Bubble implements ISorter {
 
     @Override
     public String description() {
-        return "Bubble Sort Sıralama Algoritması";
+        return "Bubble Sort";
     }
 
     @Override

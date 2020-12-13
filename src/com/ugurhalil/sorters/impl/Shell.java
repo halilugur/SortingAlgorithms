@@ -10,7 +10,7 @@ public class Shell implements ISorter {
 
     @Override
     public String description() {
-        return "Shell Sıralama Algoritması";
+        return "Shell Sort";
     }
 
     @Override

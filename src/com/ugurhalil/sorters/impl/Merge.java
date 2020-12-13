@@ -11,7 +11,7 @@ public class Merge implements ISorter {
 
     @Override
     public String description() {
-        return "Merge Sıralama Algoritması";
+        return "Merge Sort";
     }
 
     @Override

@@ -10,7 +10,7 @@ public class Quick implements ISorter {
 
     @Override
     public String description() {
-        return "Quick Sort Sıralama Algoritması";
+        return "Quick Sort";
     }
 
     @Override

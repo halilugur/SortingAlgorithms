@@ -10,7 +10,7 @@ public class Selection implements ISorter {
 
     @Override
     public String description() {
-        return "Selection Sıralama Algoritması";
+        return "Selection Sort";
     }
 
     @Override

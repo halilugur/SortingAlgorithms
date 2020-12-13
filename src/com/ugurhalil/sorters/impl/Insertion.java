@@ -10,7 +10,7 @@ public class Insertion implements ISorter {
 
     @Override
     public String description() {
-        return "Insertion Sort Sıralama Algoritması";
+        return "Insertion Sort";
     }
 
     @Override
