@@ -7,16 +7,10 @@ import com.ugurhalil.sorters.ISorter;
  * @since 20.10.2019
  */
 public class Insertion implements ISorter {
-    private long counter = 0;
 
     @Override
     public String description() {
         return "Insertion Sort Sıralama Algoritması";
-    }
-
-    @Override
-    public long loopCounter() {
-        return counter;
     }
 
     @Override
@@ -32,10 +26,8 @@ public class Insertion implements ISorter {
             while ((j > 0) && (array[j - 1] > IndexValue)) {
                 array[j] = array[j - 1];
                 j = j - 1;
-                counter++;
             }
             array[j] = IndexValue;
-            counter++;
         }
     }
 }

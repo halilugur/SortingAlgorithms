@@ -7,16 +7,10 @@ import com.ugurhalil.sorters.ISorter;
  * @since 20.10.2019
  */
 public class Selection implements ISorter {
-    private long counter = 0;
 
     @Override
     public String description() {
         return "Selection Sıralama Algoritması";
-    }
-
-    @Override
-    public long loopCounter() {
-        return counter;
     }
 
     @Override
@@ -31,13 +25,11 @@ public class Selection implements ISorter {
                 if (array[j] < array[MinValue]) {
                     MinValue = j;
                 }
-                counter++;
             }
 
             TempValue = array[i];
             array[i] = array[MinValue];
             array[MinValue] = TempValue;
-            counter++;
         }
 
     }

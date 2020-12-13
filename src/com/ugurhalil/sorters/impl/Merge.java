@@ -8,7 +8,6 @@ import com.ugurhalil.sorters.ISorter;
  */
 public class Merge implements ISorter {
     private int[] Array2;
-    private long counter = 0;
 
     @Override
     public String description() {
@@ -16,23 +15,18 @@ public class Merge implements ISorter {
     }
 
     @Override
-    public long loopCounter() {
-        return counter;
-    }
-
-    @Override
     public void execute(int[] array) {
         Array2 = new int[array.length];
-        Sort(0, array.length - 1, array);
+        sort(0, array.length - 1, array);
     }
 
-    private void Sort(int LeftValue, int RightValue, int[] Array) {
+    private void sort(int LeftValue, int RightValue, int[] Array) {
         int mid;
 
         if (RightValue > LeftValue) {
             mid = (RightValue + LeftValue) / 2;
-            Sort(LeftValue, mid, Array);
-            Sort(mid + 1, RightValue, Array);
+            sort(LeftValue, mid, Array);
+            sort(mid + 1, RightValue, Array);
 
             DoMerge(LeftValue, mid + 1, RightValue, Array);
         }
@@ -55,27 +49,23 @@ public class Merge implements ISorter {
                 TempPosition = TempPosition + 1;
                 MiddleValue = MiddleValue + 1;
             }
-            counter++;
         }
 
         while (LeftValue <= LeftEnd) {
             Array2[TempPosition] = Array[LeftValue];
             LeftValue = LeftValue + 1;
             TempPosition = TempPosition + 1;
-            counter++;
         }
 
         while (MiddleValue <= RightValue) {
             Array2[TempPosition] = Array[MiddleValue];
             MiddleValue = MiddleValue + 1;
             TempPosition = TempPosition + 1;
-            counter++;
         }
 
         for (i = 0; i < NumberOfElements; i++) {
             Array[RightValue] = Array2[RightValue];
             RightValue = RightValue - 1;
-            counter++;
         }
     }
 }

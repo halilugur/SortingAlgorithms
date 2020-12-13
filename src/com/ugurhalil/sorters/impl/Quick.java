@@ -7,7 +7,6 @@ import com.ugurhalil.sorters.ISorter;
  * @since 20.10.2019
  */
 public class Quick implements ISorter {
-    private long counter = 0;
 
     @Override
     public String description() {
@@ -15,56 +14,36 @@ public class Quick implements ISorter {
     }
 
     @Override
-    public long loopCounter() {
-        return counter;
-    }
-
-    @Override
     public void execute(int[] array) {
-        Sort(0, array.length - 1, array);
+        sort(array, 0, array.length - 1);
     }
 
-    private void Sort(int LeftValue, int RightValue, int[] Array) {
-        int PivotValue, LeftHoldValue, RightHoldValue;
 
-        LeftHoldValue = LeftValue;
-        RightHoldValue = RightValue;
-        PivotValue = Array[LeftValue];
-
-        while (LeftValue < RightValue) {
-            while ((Array[RightValue] >= PivotValue) && (LeftValue < RightValue)) {
-                RightValue--;
-                counter++;
+    static void sort(int[] arr, int low, int high) {
+        int i = low;
+        int j = high;
+        int middle = arr[(low + high) / 2];
+        while (i <= j) {
+            while (arr[i] < middle) {
+                i++;
             }
-
-            if (LeftValue != RightValue) {
-                Array[LeftValue] = Array[RightValue];
-                LeftValue++;
+            while (arr[j] > middle) {
+                j--;
             }
+            if (i <= j) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
 
-            while ((Array[LeftValue] <= PivotValue) && (LeftValue < RightValue)) {
-                LeftValue++;
-                counter++;
+                i++;
+                j--;
             }
-
-            if (LeftValue != RightValue) {
-                Array[RightValue] = Array[LeftValue];
-                RightValue--;
-            }
-            counter++;
         }
-
-        Array[LeftValue] = PivotValue;
-        PivotValue = LeftValue;
-        LeftValue = LeftHoldValue;
-        RightValue = RightHoldValue;
-
-        if (LeftValue < PivotValue) {
-            Sort(LeftValue, PivotValue - 1, Array);
+        if (low < j) {
+            sort(arr, low, j);
         }
-
-        if (RightValue > PivotValue) {
-            Sort(PivotValue + 1, RightValue, Array);
+        if (i < high) {
+            sort(arr, i, high);
         }
     }
 }

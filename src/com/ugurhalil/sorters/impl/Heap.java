@@ -7,7 +7,6 @@ import com.ugurhalil.sorters.ISorter;
  * @since 20.10.2019
  */
 public class Heap implements ISorter {
-    private long counter = 0;
 
     @Override
     public String description() {
@@ -15,15 +14,9 @@ public class Heap implements ISorter {
     }
 
     @Override
-    public long loopCounter() {
-        return counter;
-    }
-
-    @Override
     public void execute(int[] array) {
         for (int i = (array.length - 1) / 2; i >= 0; i--){
             adjust(array, i, array.length - 1);
-            counter++;
         }
 
         for (int i = array.length - 1; i >= 1; i--) {
@@ -31,7 +24,6 @@ public class Heap implements ISorter {
             array[0] = array[i];
             array[i] = Temp;
             adjust(array, 0, i - 1);
-            counter++;
         }
     }
 
@@ -51,7 +43,6 @@ public class Heap implements ISorter {
             } else {
                 j = m + 1;
             }
-            counter++;
         }
 
         array[i] = TempValue;

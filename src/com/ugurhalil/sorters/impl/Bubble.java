@@ -7,16 +7,10 @@ import com.ugurhalil.sorters.ISorter;
  * @since 20.10.2019
  */
 public class Bubble implements ISorter {
-    private long counter = 0;
 
     @Override
     public String description() {
         return "Bubble Sort Sıralama Algoritması";
-    }
-
-    @Override
-    public long loopCounter() {
-        return counter;
     }
 
     @Override
@@ -32,9 +26,7 @@ public class Bubble implements ISorter {
                     array[j - 1] = array[j];
                     array[j] = TempValue;
                 }
-                counter++;
             }
-            counter++;
         }
     }
 }

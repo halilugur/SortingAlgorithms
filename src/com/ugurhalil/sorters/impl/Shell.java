@@ -7,16 +7,10 @@ import com.ugurhalil.sorters.ISorter;
  * @since 20.10.2019
  */
 public class Shell implements ISorter {
-    private long counter = 0;
 
     @Override
     public String description() {
         return "Shell Sıralama Algoritması";
-    }
-
-    @Override
-    public long loopCounter() {
-        return counter;
     }
 
     @Override
@@ -33,10 +27,8 @@ public class Shell implements ISorter {
                 while ((j >= Increment) && (array[j - Increment] > TempValue)) {
                     array[j] = array[j - Increment];
                     j = j - Increment;
-                    counter++;
                 }
                 array[j] = TempValue;
-                counter++;
             }
 
             if (Increment / 2 != 0) {
@@ -46,7 +38,6 @@ public class Shell implements ISorter {
             } else {
                 Increment = 1;
             }
-            counter++;
         }
 
     }

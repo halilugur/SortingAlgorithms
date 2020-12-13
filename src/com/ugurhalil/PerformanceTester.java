@@ -9,17 +9,12 @@ import com.ugurhalil.sorters.ISorter;
 public class PerformanceTester {
 
     public void execute(ISorter sorter, int[] array) {
-        StopWatch watcher = new StopWatch();
-        watcher.start();
-
+        long startTime = System.nanoTime();
         sorter.execute(array);
-
-        watcher.stop();
-
-        String result = String.format("%s için Toplam Çalışma Süresi : %s milisaniyedir. Döngü Sayısı %s Dizi boyutu %s"
+        long endTime = System.nanoTime();
+        String result = String.format("%s,%s,%s"
                 , sorter.description()
-                , watcher.getElapsedTime()
-                , sorter.loopCounter()
+                , (endTime - startTime) / 1000
                 , array.length);
         System.out.println(result);
     }
